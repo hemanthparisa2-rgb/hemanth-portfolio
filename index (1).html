@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Parise Hemanth's AI Engineer portfolio showcasing AI, computer vision, web development, algorithms, and data analytics projects.">
+<title>Parise Hemanth | AI Engineer Portfolio</title>
+<style>
+:root{
+  --bg:#f7f9ff;--surface:#ffffff;--ink:#17213b;--muted:#66718a;
+  --blue:#4361ee;--violet:#7857e8;--cyan:#0ea5b7;--line:#e5eaf5;
+  --soft:#eef2ff;--shadow:0 18px 45px rgba(48,67,120,.09)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:Inter,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,91%);margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav-inner{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.logo{font-size:21px;font-weight:850;letter-spacing:-.7px}.logo span{color:var(--blue)}
+.nav-links{display:flex;gap:25px;flex-wrap:wrap}.nav-links a{font-size:14px;font-weight:650;color:var(--muted)}
+.nav-links a:hover{color:var(--blue)}
+.hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.35fr .85fr;align-items:center;gap:55px;padding:90px 0 85px}
+.hero:before{content:"";position:absolute;width:360px;height:360px;right:-80px;top:-130px;background:radial-gradient(circle,rgba(120,87,232,.13),transparent 70%);pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;border:1px solid #dce4ff;background:#fff;border-radius:30px;padding:7px 13px;color:#4058cf;font-size:12px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase}
+.dot{width:8px;height:8px;background:#28b89b;border-radius:50%}
+h1{font-size:clamp(39px,5.5vw,67px);line-height:1.1;letter-spacing:-2.3px;margin:22px 0}
+.gradient{background:linear-gradient(100deg,var(--blue),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{font-size:17px;color:var(--muted);max-width:640px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 19px;border-radius:11px;border:1px solid var(--line);font-weight:750;font-size:14px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 9px 20px #243b7214}
+.btn.primary{color:white;background:linear-gradient(110deg,var(--blue),var(--violet));border-color:transparent}
+.btn.secondary{background:#fff;color:var(--ink)}
+.profile-card{position:relative;background:linear-gradient(150deg,#fff,#f0f3ff);border:1px solid #e1e7fa;border-radius:27px;padding:30px;box-shadow:var(--shadow)}
+.profile-top{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.avatar{width:76px;height:76px;flex-shrink:0;display:grid;place-items:center;border-radius:23px;background:linear-gradient(135deg,#dfe6ff,#e9ddff);color:#4058cf;font-size:27px;font-weight:900;box-shadow:inset 0 0 0 1px #fff}
+.profile-card h2{font-size:23px;letter-spacing:-.6px}.role{font-size:13px;color:var(--muted)}
+.profile-card .summary{color:var(--muted);font-size:14px;margin:0 0 21px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;border:1px solid #e0e6f8;background:#fff;color:#526080;border-radius:30px;padding:5px 11px;font-size:12px;font-weight:650}
+.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+.stat{padding:12px 8px;border-radius:13px;background:#fff;border:1px solid var(--line);text-align:center}
+.stat strong{display:block;color:var(--blue);font-size:21px}.stat span{display:block;color:var(--muted);font-size:11px}
+section{padding:76px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:29px}
+.section-title{font-size:clamp(28px,3.5vw,37px);letter-spacing:-1px;line-height:1.2}
+.section-title .period{color:var(--blue)}
+.section-intro{max-width:650px;color:var(--muted);margin-top:10px;font-size:15px}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.skill-card,.project-card,.about-card,.contact-box{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 28px rgba(48,67,120,.035)}
+.skill-card{padding:23px}.skill-icon{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:var(--soft);font-size:22px;margin-bottom:15px}
+.skill-card h3{font-size:17px;margin-bottom:7px}.skill-card p{font-size:13px;color:var(--muted)}
+.projects-section{background:#f0f4ff;border-top:1px solid #e7edfc;border-bottom:1px solid #e7edfc}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:19px}
+.project-card{padding:25px;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
+.project-card:hover{transform:translateY(-4px);border-color:#c6d1ff;box-shadow:var(--shadow)}
+.project-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}
+.project-icon{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#eef2ff,#f4eaff);display:grid;place-items:center;font-size:23px}
+.project-number{font-size:11px;font-weight:850;letter-spacing:1.4px;color:#8792ad}
+.project-card h3{font-size:20px;letter-spacing:-.4px;margin-bottom:9px}
+.project-card p{font-size:14px;color:var(--muted);margin-bottom:18px}
+.project-card .chips{margin-top:auto;margin-bottom:20px}
+.project-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.demo-link{display:inline-flex;align-items:center;gap:7px;color:var(--blue);font-size:13px;font-weight:800}
+.demo-link:hover{text-decoration:underline}
+.demo-note{font-size:11px;color:#8490a8}
+.about-card{padding:28px;max-width:900px}
+.about-card p{color:var(--muted);font-size:15px}.about-card p+p{margin-top:13px}
+.education-strip{display:flex;align-items:flex-start;gap:16px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.education-icon{width:43px;height:43px;flex-shrink:0;border-radius:13px;background:var(--soft);display:grid;place-items:center;font-size:20px}
+.education-strip strong{display:block}.education-strip span{color:var(--muted);font-size:13px}
+.contact-box{padding:36px;background:radial-gradient(circle at top right,#f0eaff,transparent 44%),#fff}
+.contact-box p{color:var(--muted);max-width:650px;margin-top:12px}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:23px}
+footer{padding:25px 0;border-top:1px solid var(--line);text-align:center;color:var(--muted);font-size:13px;background:#fff}
+@media(max-width:760px){
+ .nav-inner{padding:13px 0;align-items:flex-start;flex-direction:column;gap:10px}
+ .nav-links{gap:16px}.hero{grid-template-columns:1fr;padding:65px 0;gap:32px}
+ .skills-grid{grid-template-columns:repeat(2,1fr)}.projects-grid{grid-template-columns:1fr}
+ .section-head{align-items:flex-start;flex-direction:column}section{padding:58px 0}
+}
+@media(max-width:470px){.skills-grid{grid-template-columns:1fr}.hero-copy{font-size:15px}h1{letter-spacing:-1.5px}.profile-card{padding:22px}.mini-stats{gap:6px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a href="#home" class="logo">Parise Hemanth<span>.</span></a>
+    <div class="nav-links">
+      <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<header class="container hero" id="home">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> Aspiring AI Engineer</div>
+    <h1>Turning ideas into <span class="gradient">intelligent solutions.</span></h1>
+    <p class="hero-copy">Hi, I'm Parise Hemanth. I explore AI, computer vision, data analytics, algorithms, and software development to build practical, user-friendly technology solutions.</p>
+    <div class="hero-buttons">
+      <a href="#projects" class="btn primary">Explore My Projects ↗</a>
+      <a href="mailto:hemanthparisa42@gmail.com" class="btn secondary">Contact Me</a>
+    </div>
+  </div>
+  <aside class="profile-card">
+    <div class="profile-top">
+      <div class="avatar">PH</div>
+      <div><h2>Parise Hemanth</h2><div class="role">Aspiring AI Engineer</div></div>
+    </div>
+    <p class="summary">Interested in building intelligent applications and solving real-world problems through AI and technology.</p>
+    <div class="chips">
+      <span class="chip">Artificial Intelligence</span><span class="chip">Python</span>
+      <span class="chip">Computer Vision</span><span class="chip">Java</span>
+      <span class="chip">Data Analytics</span><span class="chip">Web Development</span>
+    </div>
+    <div class="mini-stats">
+      <div class="stat"><strong>5</strong><span>Projects</span></div>
+      <div class="stat"><strong>AI</strong><span>Focus Area</span></div>
+      <div class="stat"><strong>∞</strong><span>Curiosity</span></div>
+    </div>
+  </aside>
+</header>
+
+<section id="about">
+ <div class="container">
+  <h2 class="section-title">About Me<span class="period">.</span></h2>
+  <p class="section-intro">A curious developer who enjoys learning by building.</p>
+  <div class="about-card">
+   <p>I am an aspiring AI Engineer with academic project experience in AI-powered applications, computer vision, algorithm design, Java game development, and exploratory data analysis. I enjoy converting ideas into practical applications and learning the technologies behind them.</p>
+   <p>My projects include a meeting intelligence platform developed with a four-member team, a greedy-algorithm-based smart parking website, an anti-spoofing attendance application, a Java game, and energy consumption analysis. I am eager to keep improving my skills and contribute to meaningful engineering projects.</p>
+   <div class="education-strip"><div class="education-icon">🎓</div><div><strong>Saveetha School of Engineering, Chennai</strong><span>3rd-Year Computer Science Engineering (CSE - AI) Student</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="container">
+  <h2 class="section-title">Skills &amp; Interests<span class="period">.</span></h2>
+  <p class="section-intro">Areas explored through coursework and hands-on projects. Update these to match the tools you used.</p>
+  <div class="skills-grid">
+   <article class="skill-card"><div class="skill-icon">🤖</div><h3>AI Applications</h3><p>AI-powered tools, intelligent application design, and meeting information extraction.</p></article>
+   <article class="skill-card"><div class="skill-icon">👁️</div><h3>Computer Vision</h3><p>Face-based attendance concepts and anti-spoofing detection.</p></article>
+   <article class="skill-card"><div class="skill-icon">📊</div><h3>Data Analytics</h3><p>Exploratory Data Analysis, historical trends, and data visualization.</p></article>
+   <article class="skill-card"><div class="skill-icon">💻</div><h3>Programming</h3><p>Java, Python, object-oriented programming, and problem solving.</p></article>
+   <article class="skill-card"><div class="skill-icon">🌐</div><h3>Web Development</h3><p>Building website interfaces and interactive application experiences.</p></article>
+   <article class="skill-card"><div class="skill-icon">🧠</div><h3>Algorithms &amp; DSA</h3><p>Greedy algorithms, allocation logic, and computational thinking.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="projects" class="projects-section">
+ <div class="container">
+  <h2 class="section-title">Featured Projects<span class="period">.</span></h2>
+  <p class="section-intro">A selection of projects across AI, computer vision, algorithms, game development, and analytics.</p>
+  <div class="projects-grid">
+   <article class="project-card">
+    <div class="project-top"><div class="project-icon">🎙️</div><span class="project-number">PROJECT 01</span></div>
+    <h3>AI Meeting Intelligence Platform</h3>
+    <p>Worked in a four-member team to build a website that records meetings and highlights important words and key points, helping users review meeting information more easily.</p>
+    <div class="chips"><span class="chip">AI</span><span class="chip">Web Development</span><span class="chip">Meeting Analysis</span></div>
+    <div class="project-actions"><a class="demo-link" href="#contact" data-demo="meeting">Live Demo ↗</a><span class="demo-note" id="note-meeting">Add your deployed project URL</span></div>
+   </article>
+   <article class="project-card">
+    <div class="project-top"><div class="project-icon">🅿️</div><span class="project-number">PROJECT 02</span></div>
+    <h3>Smart Parking Using Greedy Algorithm</h3>
+    <p>Created a sample mall parking website demonstrating how a greedy algorithm can allocate an appropriate available parking space.</p>
+    <div class="chips"><span class="chip">Greedy Algorithm</span><span class="chip">Web Development</span><span class="chip">DSA</span></div>
+    <div class="project-actions"><a class="demo-link" href="#contact" data-demo="parking">Live Demo ↗</a><span class="demo-note" id="note-parking">Add your deployed project URL</span></div>
+   </article>
+   <article class="project-card">
+    <div class="project-top"><div class="project-icon">🐦</div><span class="project-number">PROJECT 03</span></div>
+    <h3>Flappy Bird Game Using Java</h3>
+    <p>Developed a Java game featuring player controls, obstacles, scoring, and interactive gameplay mechanics.</p>
+    <div class="chips"><span class="chip">Java</span><span class="chip">OOP</span><span class="chip">Game Development</span></div>
+    <div class="project-actions"><a class="demo-link" href="#contact" data-demo="flappy">Live Demo ↗</a><span class="demo-note" id="note-flappy">Add a web build or playable demo URL</span></div>
+   </article>
+   <article class="project-card">
+    <div class="project-top"><div class="project-icon">🛡️</div><span class="project-number">PROJECT 04</span></div>
+    <h3>AI Smart Attendance with Anti-Spoofing</h3>
+    <p>Developed an attendance application for a computer vision project, designed to reject attendance marking when a spoofing attempt is detected.</p>
+    <div class="chips"><span class="chip">Computer Vision</span><span class="chip">AI</span><span class="chip">Anti-Spoofing</span></div>
+    <div class="project-actions"><a class="demo-link" href="#contact" data-demo="attendance">Live Demo ↗</a><span class="demo-note" id="note-attendance">Add your deployed project URL</span></div>
+   </article>
+   <article class="project-card">
+    <div class="project-top"><div class="project-icon">⚡</div><span class="project-number">PROJECT 05</span></div>
+    <h3>Smart Energy Consumption Analysis</h3>
+    <p>Analyzed a decade of energy consumption data using EDA techniques to explore historical patterns, trends, and changes in consumption.</p>
+    <div class="chips"><span class="chip">Python</span><span class="chip">EDA</span><span class="chip">Data Visualization</span></div>
+    <div class="project-actions"><a class="demo-link" href="#contact" data-demo="energy">Live Demo ↗</a><span class="demo-note" id="note-energy">Add your deployed notebook or dashboard URL</span></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="container">
+  <div class="contact-box">
+   <h2 class="section-title">Let's Connect<span class="period">.</span></h2>
+   <p>I'm interested in AI Engineer opportunities, internships, collaborative projects, and learning new technologies. Feel free to contact me or explore my profiles.</p>
+   <div class="contact-links">
+    <a class="btn primary" href="mailto:hemanthparisa42@gmail.com">✉ Email Me</a>
+    <a class="btn secondary" href="https://www.linkedin.com/in/parise-hemanth-7bb996377" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <a class="btn secondary" href="https://github.com/hemanthparisa2-rgb" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+<footer><div class="container">© <span id="year"></span> Parise Hemanth · AI Engineer Portfolio</div></footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/*
+HOW TO ADD A REAL LIVE DEMO:
+Replace the empty string for each project below with its deployed URL.
+Example: meeting: "https://your-meeting-app.example"
+Leave a value empty until that project is deployed.
+*/
+const demoUrls = {
+  meeting: "",
+  parking: "",
+  flappy: "",
+  attendance: "",
+  energy: ""
+};
+
+document.querySelectorAll("[data-demo]").forEach(link => {
+  const key = link.dataset.demo;
+  const url = demoUrls[key];
+  if (url && /^https?:\/\//i.test(url)) {
+    link.href = url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    const note = document.getElementById("note-" + key);
+    if (note) note.textContent = "Open the deployed project";
+  } else {
+    link.addEventListener("click", event => {
+      event.preventDefault();
+      alert("This project has not been given a deployed Live Demo URL yet. Deploy it first, then add its URL to the demoUrls section near the bottom of index.html.");
+    });
+  }
+});
+</script>
+</body>
+</html>
